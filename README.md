@@ -15,6 +15,7 @@ Both scripts flatten the subfolder structure into the output filenames using `__
 - Dependencies listed in `pyproject.toml`:
   - `html-to-markdown` — HTML to Markdown conversion with metadata extraction
   - `pymupdf4llm` — PDF to Markdown conversion optimized for LLM/RAG use
+  - `pymupdf-layout` — Improved page layout detection for PDF conversion (Optional)
 
 ## Installation
 
