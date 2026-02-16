@@ -1,3 +1,4 @@
+import pymupdf.layout
 import pymupdf4llm
 import pathlib
 import os
@@ -26,7 +27,8 @@ for file_path in pdf_files:
     base_name = os.path.splitext(rel_path)[0].replace(os.sep, "__") + ".md"
 
     try:
-        md_text = pymupdf4llm.to_markdown(file_path)
+        doc = pymupdf.open(file_path)
+        md_text = pymupdf4llm.to_markdown(doc)
 
         output_path = os.path.join(output_folder, base_name)
         pathlib.Path(output_path).write_text(md_text, encoding="utf-8")
